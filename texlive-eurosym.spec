@@ -1,5 +1,11 @@
+# revision 17265
+# category Package
+# catalog-ctan /fonts/eurosym
+# catalog-date 2009-03-31 14:27:12 +0200
+# catalog-license other-free
+# catalog-version 1.4-subrfix
 Name:		texlive-eurosym
-Version:	1.4.subrfix
+Version:	1.4-subrfix
 Release:	1
 Summary:	MetaFont and macros for Euro sign
 Group:		Publishing
@@ -78,6 +84,7 @@ macro, pre-compiled tfm files, and documentation.
 %doc %{_texmfdistdir}/doc/fonts/eurosym/src/Makefile
 %doc %{_texmfdistdir}/doc/fonts/eurosym/testeuro.pdf
 %doc %{_texmfdistdir}/doc/fonts/eurosym/testeuro.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -88,3 +95,5 @@ macro, pre-compiled tfm files, and documentation.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
