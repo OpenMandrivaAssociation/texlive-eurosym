@@ -5,7 +5,7 @@
 # catalog-license other-free
 # catalog-version 1.4-subrfix
 Name:		texlive-eurosym
-Version:	1.4-subrfix
+Version:	1.4
 Release:	1
 Summary:	MetaFont and macros for Euro sign
 Group:		Publishing
@@ -15,7 +15,8 @@ Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
-Requires(post):	texlive-tlpkg
+Requires(pre):	texlive-tlpkg
+Requires(post):	texlive-kpathsea
 Conflicts:	texlive-texmf <= 20110705-3
 Conflicts:	texlive-doc <= 20110705-3
 
