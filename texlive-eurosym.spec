@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The new European currency symbol for the Euro implemented in
@@ -27,20 +25,12 @@ and providing several shapes (normal, slanted, bold, outline).
 The package also includes a LaTeX package which defines the
 macro, pre-compiled tfm files, and documentation.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -85,7 +75,6 @@ macro, pre-compiled tfm files, and documentation.
 %doc %{_texmfdistdir}/doc/fonts/eurosym/src/Makefile
 %doc %{_texmfdistdir}/doc/fonts/eurosym/testeuro.pdf
 %doc %{_texmfdistdir}/doc/fonts/eurosym/testeuro.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -96,5 +85,3 @@ macro, pre-compiled tfm files, and documentation.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
