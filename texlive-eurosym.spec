@@ -85,3 +85,17 @@ macro, pre-compiled tfm files, and documentation.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.4-2
++ Revision: 751667
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.4-1
++ Revision: 720562
+- texlive-eurosym
+- texlive-eurosym
+- texlive-eurosym
+- texlive-eurosym
+
