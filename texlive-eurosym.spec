@@ -6,7 +6,7 @@
 # catalog-version 1.4-subrfix
 Name:		texlive-eurosym
 Version:	1.4
-Release:	9
+Release:	10
 Summary:	MetaFont and macros for Euro sign
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/eurosym
