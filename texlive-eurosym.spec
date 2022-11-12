@@ -1,18 +1,12 @@
-# revision 17265
-# category Package
-# catalog-ctan /fonts/eurosym
-# catalog-date 2009-03-31 14:27:12 +0200
-# catalog-license other-free
-# catalog-version 1.4-subrfix
 Name:		texlive-eurosym
-Version:	1.4subrfix
-Release:	2
+Version:	17265
+Release:	1
 Summary:	MetaFont and macros for Euro sign
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/eurosym
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ The package also includes a LaTeX package which defines the
 macro, pre-compiled tfm files, and documentation.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -78,24 +72,10 @@ macro, pre-compiled tfm files, and documentation.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.4-2
-+ Revision: 751667
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.4-1
-+ Revision: 720562
-- texlive-eurosym
-- texlive-eurosym
-- texlive-eurosym
-- texlive-eurosym
-
