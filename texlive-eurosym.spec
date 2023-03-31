@@ -1,6 +1,6 @@
 Name:		texlive-eurosym
 Version:	17265
-Release:	1
+Release:	2
 Summary:	MetaFont and macros for Euro sign
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/eurosym
