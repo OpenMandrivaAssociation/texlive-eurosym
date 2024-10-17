@@ -3,7 +3,7 @@ Version:	17265
 Release:	2
 Summary:	MetaFont and macros for Euro sign
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/eurosym
+URL:		https://www.ctan.org/tex-archive/fonts/eurosym
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eurosym.doc.r%{version}.tar.xz
